@@ -15,7 +15,9 @@ class RecipeController extends Controller
         $recipe -> ingredients = $req -> ingredients;
         $recipe -> steps = $req -> steps;
 
-        $recipe -> img = $req -> file('file') -> store('img');
+        $pic = $req -> file('file') -> store('public/img');
+
+        $recipe -> img = ltrim($pic,"public");
 
         $recipe -> isvegan = $req -> isvegan;
         $recipe -> readyin = $req -> readyin;
@@ -32,7 +34,19 @@ class RecipeController extends Controller
         return Recipe::all();
     }
 
+    function showAllRecipesInApi(){
+        return Recipe::all();
+    }
 
 
+    function showRecipesInAPI(Recipe $key){
+        return $key;
+    }
+
+    function addPhoto(Request $req){
+        $pic = $req -> file('file') -> store('public/img');
+        return ltrim($pic,"public");
+
+    }
 
 }

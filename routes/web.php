@@ -21,3 +21,6 @@ Route::get('/', function () {
 Route::view("recipeform","recipeform");
 Route::post("addrecipe",[RecipeController::class,'addRecipe']);
 Route::get("getrecipes",[RecipeController::class,'showRecipes']);
+
+Route::post("addphoto",[RecipeController::class,'addPhoto']);
+Route::view("photoform","photoform");
