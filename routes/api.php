@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get("getrecipe/{key}",[RecipeController::class,'showRecipesInAPI']);
 
 Route::get("getrecipes",[RecipeController::class,'showAllRecipesInApi']);
+Route::post("signup",[UserController::class,'addUserInAPI']);
 

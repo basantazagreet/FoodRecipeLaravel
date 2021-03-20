@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +25,7 @@ Route::get("getrecipes",[RecipeController::class,'showRecipes']);
 
 Route::post("addphoto",[RecipeController::class,'addPhoto']);
 Route::view("photoform","photoform");
+Route::view("signupform","signupform");
+Route::post("signup",[UserController::class,'addUser']);
+
+
